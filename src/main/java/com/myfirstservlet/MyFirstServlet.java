@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+
 @WebServlet("/MyFirstServlet")
 public class MyFirstServlet extends HttpServlet {
     @Override
