@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet {
                 String userID = getServletConfig().getInitParameter("user");
                 boolean name = Pattern.matches("^[A-Z][a-z]{3,}$",user);
                 String password = getServletConfig().getInitParameter("password");
-                boolean passWord = Pattern.matches("^[[A-Z1-9a-z]{1,}[@#$%*&]{1}]{8,}$",pwd);
+                boolean passWord = Pattern.matches("^([A-Z1-9a-z]+[@#$%*&]){8,}$",pwd);
                 if ( !name ) {
                         request.getRequestDispatcher("Invalid.jsp").forward(request, response);
                 } else if (!passWord ) {
