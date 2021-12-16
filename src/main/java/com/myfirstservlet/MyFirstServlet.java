@@ -10,6 +10,14 @@ import java.io.PrintWriter;
 
 @WebServlet("/MyFirstServlet")
 public class MyFirstServlet extends HttpServlet {
+
+    /**
+     * Call method doGet to handle a GET request.
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");

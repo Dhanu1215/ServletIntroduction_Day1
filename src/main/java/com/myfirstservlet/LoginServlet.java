@@ -27,11 +27,13 @@ public class LoginServlet extends HttpServlet {
                 //get request parameters for userID and password
                 String user = request.getParameter("user");
                 String pwd = request.getParameter("pwd");
+
                 //get servlet config init params ,
                 String userID = getServletConfig().getInitParameter("user");
-                boolean name = Pattern.matches("^[A-Z][a-z]{3,}$",user);
+                boolean name = Pattern.matches("^[A-Z]{1}[a-z]{3,}$",user);
                 String password = getServletConfig().getInitParameter("password");
-                boolean passWord = Pattern.matches("^([A-Z1-9a-z]+[@#$%*&]){8,}$",pwd);
+                boolean passWord = Pattern.matches("^[[A-Z1-9a-z]+[@#$%*&]]{8,}$",pwd);
+
                 if ( !name ) {
                         request.getRequestDispatcher("Invalid.jsp").forward(request, response);
                 } else if (!passWord ) {
